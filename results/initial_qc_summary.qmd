@@ -1,0 +1,141 @@
+---
+title: "Initial QC summary"
+author: "Teckla Akinyi"
+date: 2025-05-04
+format: html
+toc: true
+editor: visual
+---
+
+## Data Description and initial QC
+
+97 raw reads of paired Illumina files from waste water samples from all 13 geo-locations were downloaded from NCBI under BioProject PRJNA765031. The preprocessing included running through fastqc v0.12.1 and multiqc v1.15. Trimming for adapter content using trimmomatic v0.39 using the TruSeq3-PE-2 adapter content file. This initial fastqc report @tbl-one showed low numbers of sequence counts, with highest sample having 0.6M reads and about 30 samples rounding to 0M reads, a wide range of duplication (0.0% - 97.9%) duplication and a median %GC of 30.5. The median read length is 151bp.
+
+::: {#tbl-one}
+
++------------------------------------------------------------------------+
+| | Sample Name        | \% Dups | \% GC | Median Read Length | M Seqs | |
+| |:-------------------|:--------|:------|:-------------------|:-------| |
+| | SRR16004552_trim_1 | 82.4%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004552_trim_2 | 80.7%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004553_trim_1 | 85.7%   | 39%   | 151 bp             | 0.5    | |
+| | SRR16004553_trim_2 | 85.3%   | 39%   | 151 bp             | 0.5    | |
+| | SRR16004554_trim_1 | 87.1%   | 39%   | 151 bp             | 0.6    | |
+| | SRR16004554_trim_2 | 86.2%   | 39%   | 151 bp             | 0.6    | |
+| | SRR16004555_trim_1 | 88.1%   | 40%   | 151 bp             | 0.5    | |
+| | SRR16004555_trim_2 | 86.7%   | 40%   | 151 bp             | 0.5    | |
+| | SRR16004556_trim_1 | 80.7%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004556_trim_2 | 80.5%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004557_trim_1 | 49.9%   | 47%   | 151 bp             | 0.0    | |
+| | SRR16004557_trim_2 | 46.9%   | 47%   | 151 bp             | 0.0    | |
+| | SRR16004558_trim_1 | 82.7%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004558_trim_2 | 80.0%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004559_trim_1 | 77.8%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004559_trim_2 | 77.8%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004560_trim_1 | 66.5%   | 39%   | 151 bp             | 0.0    | |
+| | SRR16004560_trim_2 | 65.5%   | 38%   | 151 bp             | 0.0    | |
+| | SRR16004561_trim_1 | 83.2%   | 40%   | 151 bp             | 0.3    | |
+| | SRR16004561_trim_2 | 81.8%   | 40%   | 151 bp             | 0.3    | |
+| | SRR16004562_trim_1 | 71.4%   | 42%   | 151 bp             | 0.0    | |
+| | SRR16004562_trim_2 | 71.1%   | 42%   | 151 bp             | 0.0    | |
+| | SRR16004563_trim_1 | 54.9%   | 54%   | 151 bp             | 0.1    | |
+| | SRR16004563_trim_2 | 52.1%   | 54%   | 151 bp             | 0.1    | |
+| | SRR16004564_trim_1 | 42.5%   | 50%   | 151 bp             | 0.0    | |
+| | SRR16004564_trim_2 | 40.6%   | 50%   | 151 bp             | 0.0    | |
+| | SRR16004565_trim_1 | 75.7%   | 39%   | 151 bp             | 0.1    | |
+| | SRR16004565_trim_2 | 73.2%   | 40%   | 151 bp             | 0.1    | |
+| | SRR16004566_trim_1 | 81.2%   | 39%   | 151 bp             | 0.1    | |
+| | SRR16004566_trim_2 | 80.8%   | 39%   | 151 bp             | 0.1    | |
+| | SRR16004567_trim_1 | 40.0%   | 9%    | 124 bp             | 0.0    | |
+| | SRR16004567_trim_2 | 0.0%    | 16%   | 58 bp              | 0.0    | |
+| | SRR16004568_trim_1 | 56.8%   | 43%   | 151 bp             | 0.0    | |
+| | SRR16004568_trim_2 | 53.9%   | 43%   | 151 bp             | 0.0    | |
+| | SRR16004569_trim_1 | 51.3%   | 45%   | 151 bp             | 0.0    | |
+| | SRR16004569_trim_2 | 50.6%   | 45%   | 151 bp             | 0.0    | |
+| | SRR16004570_trim_1 | 78.5%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004570_trim_2 | 76.5%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004571_trim_1 | 53.8%   | 46%   | 151 bp             | 0.0    | |
+| | SRR16004571_trim_2 | 44.3%   | 46%   | 151 bp             | 0.0    | |
+| | SRR16004572_trim_1 | 80.6%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004572_trim_2 | 80.2%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004573_trim_1 | 80.0%   | 40%   | 151 bp             | 0.1    | |
+| | SRR16004573_trim_2 | 77.5%   | 40%   | 151 bp             | 0.1    | |
+| | SRR16004574_trim_1 | 74.7%   | 40%   | 151 bp             | 0.1    | |
+| | SRR16004574_trim_2 | 72.4%   | 40%   | 151 bp             | 0.1    | |
+| | SRR16004575_trim_1 | 78.9%   | 40%   | 151 bp             | 0.2    | |
+| | SRR16004575_trim_2 | 77.3%   | 40%   | 151 bp             | 0.2    | |
+| | SRR16004576_trim_1 | 88.6%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004576_trim_2 | 88.2%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004577_trim_1 | 89.5%   | 39%   | 151 bp             | 0.4    | |
+| | SRR16004577_trim_2 | 89.0%   | 39%   | 151 bp             | 0.4    | |
+| | SRR16004578_trim_1 | 86.9%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004578_trim_2 | 86.8%   | 40%   | 151 bp             | 0.3    | |
+| | SRR16004579_trim_1 | 47.5%   | 58%   | 151 bp             | 0.2    | |
+| | SRR16004579_trim_2 | 47.3%   | 58%   | 151 bp             | 0.2    | |
+| | SRR16004580_trim_1 | 76.9%   | 43%   | 151 bp             | 0.4    | |
+| | SRR16004580_trim_2 | 76.5%   | 43%   | 151 bp             | 0.4    | |
+| | SRR16004581_trim_1 | 82.6%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004581_trim_2 | 80.9%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004582_trim_1 | 46.1%   | 57%   | 151 bp             | 0.2    | |
+| | SRR16004582_trim_2 | 45.7%   | 57%   | 151 bp             | 0.2    | |
+| | SRR16004583_trim_1 | 28.0%   | 49%   | 151 bp             | 0.0    | |
+| | SRR16004583_trim_2 | 26.7%   | 49%   | 151 bp             | 0.0    | |
+| | SRR16004584_trim_1 | 58.1%   | 48%   | 151 bp             | 0.1    | |
+| | SRR16004584_trim_2 | 55.5%   | 48%   | 151 bp             | 0.1    | |
+| | SRR16004585_trim_1 | 64.3%   | 44%   | 151 bp             | 0.1    | |
+| | SRR16004585_trim_2 | 62.7%   | 44%   | 151 bp             | 0.1    | |
+| | SRR16004586_trim_1 | 56.4%   | 48%   | 151 bp             | 0.1    | |
+| | SRR16004586_trim_2 | 55.7%   | 48%   | 151 bp             | 0.1    | |
+| | SRR16004587_trim_1 | 38.4%   | 51%   | 151 bp             | 0.0    | |
+| | SRR16004587_trim_2 | 34.5%   | 51%   | 151 bp             | 0.0    | |
+| | SRR16004588_trim_1 | 85.9%   | 39%   | 151 bp             | 0.5    | |
+| | SRR16004588_trim_2 | 85.1%   | 39%   | 151 bp             | 0.5    | |
+| | SRR16004589_trim_1 | 86.3%   | 39%   | 151 bp             | 0.6    | |
+| | SRR16004589_trim_2 | 84.9%   | 40%   | 151 bp             | 0.6    | |
+| | SRR16004590_trim_1 | 78.5%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004590_trim_2 | 77.4%   | 39%   | 151 bp             | 0.2    | |
+| | SRR16004591_trim_1 | 84.7%   | 39%   | 151 bp             | 0.3    | |
+| | SRR16004591_trim_2 | 83.0%   | 39%   | 151 bp             | 0.3    | |
++========================================================================+
+|                                                                        |
++------------------------------------------------------------------------+
+
+: Basic statistics of the 97 paired raw reads reporting the duplication rates, percent GC, median read length in basepairs(bp) and read count in Millions(M)
+:::
+
+|     |
+|-----|
+
+## Trimming results
+
+The low read count a bit concerning but maybe characteristic of environmental sampling where the content is not viral rna cannot be guaranteed to have sufficient concentrations. The authors do report that of the 13 sampling locations most of the samples used were obtained from 5 sites, that is only 56 samples were utilized for the mutational analysis.
+
+After adapter trimming, there were six samples that failed to trim some adapter content with three samples reporting above 20% adapter content (figure 1a-c) @fig-trims, therefore a rerun of trimmomatic v0.39 was performed on the raw reads using the adapater content file NexteraPE-PE file instead. This is because majority of the failed files showed nextera transposase sequence as failing to successfully trim, as well as high (80%) polya content across all positions on Sample SRR16004567 @fig-trims2 . Since the polya contamination is on one sample, this sample can be eliminated from further mutational analysis given it is a sample that 1) reported read count rounded to 0; 2)the location of the collection Uebersyren(UEB) was not included in the original paper mutational analysis; 3) the identified reads for this sample according to[NCBI run browser on the samples for project PRJNA765031](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP338175&o=acc_s%3Aa) are 3% compared to other samples that are above 90% e.g. sample SRR16004558 with 97.8% identified as viral and 89.19% coronavirus.
+
+::: {#fig-trims layout-ncol=2}
+
+![Figure 1a: Sample SRR16004579 with nextera_transposas_sequence adapater content peaking at 41% on base 140](images/fig1.PNG)
+
+![Figure 1b Sample SRR16004582 with nextera_transposas_sequence adapater content peaking at 38% on base 140](images/fig2.PNG)
+
+![Figure 1c Sample SRR16004567 with polya adapater content at 80% consistently on all bases](images/fig3.PNG)
+
+Three samples were identified as having high (\>20%) adapter content for more than half the bases. This were run using Trimmomatic v0.39 trimming with TruSeq3-PE-2 adapter content file.
+
+:::
+
+The fastqc results of the running trimmonatic with the adpater file changed, show that all the samples except SRR16004567 have below 20% adapater content which is acceptable for further analysis.
+
+::: {#fig-trims2 layout-ncol=1}
+
+![](images/fig4-01.PNG){#fig2}
+
+One sample SRR16004567, remains with consistent 80% polya contamination after changing the adapter library to NexteraPE-PE. This sample will not be included in the mutational analysis for reasons explained above. All other remaining sample report adapter content below 15%.
+
+:::
+
+## Reference  {.appendix}
+
+This is created for UConn Genomic Data Analysis in Practice final project 2025. Based on data from the following published paper:
+
+Herold, M., d'Hérouël, A. F., May, P., Delogu, F., Wienecke-Baldacchino, A., Tapp, J., Walczak, C., Wilmes, P., Cauchie, H.-M., Fournier, G., & Ogorzaly, L. (2021). Genome Sequencing of SARS-CoV-2 Allows Monitoring of Variants of Concern through Wastewater. *Water*, *13*(21), 3018. <https://doi.org/10.3390/w13213018>
