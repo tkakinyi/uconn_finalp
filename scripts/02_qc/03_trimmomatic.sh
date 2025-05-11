@@ -10,7 +10,7 @@
 #SBATCH --mail-user=first.last@uconn.edu
 #SBATCH -o %x_%A_%a.out
 #SBATCH -e %x_%A_%a.err
-#SBATCH --array=[1-40]%20
+#SBATCH --array=[1-97]%20
 
 hostname
 date
