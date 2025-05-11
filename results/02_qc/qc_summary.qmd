@@ -1,0 +1,20 @@
+---
+title: "QC_Summary"
+format: html
+editor: visual
+toc-location: left
+---
+
+This document houses the QC summary of the rawreads and alignment as part of UConn Genomic Data Analysis in Practice final project 2025.
+
+{{< include initial_qc_summary.qmd >}}
+
+{{< include alignment_qc_summary.qmd >}}
+
+{{< include coverage.qmd >}}
+
+## Reference {.appendix}
+
+This is created for UConn Genomic Data Analysis in Practice final project 2025. Based on data from the following published paper:
+
+Herold, M., d'Hérouël, A. F., May, P., Delogu, F., Wienecke-Baldacchino, A., Tapp, J., Walczak, C., Wilmes, P., Cauchie, H.-M., Fournier, G., & Ogorzaly, L. (2021). Genome Sequencing of SARS-CoV-2 Allows Monitoring of Variants of Concern through Wastewater. *Water*, *13*(21), 3018. <https://doi.org/10.3390/w13213018>
