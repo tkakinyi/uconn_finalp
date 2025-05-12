@@ -1,0 +1,29 @@
+---
+title: "Coverage"
+format: html
+editor: visual
+---
+
+## Coverage
+
+Using bedtools v2.29.0, bamtools v2.5.1 and samtools 1.16.1, coverage of the alignement of the raw waste water reads to the concatanated reference genome (human + viral) was run. The per base coverage was visualized in R v 4.4.2 with required libraries tidyverse v2.0.0 and dplyr v2.5.0.
+
+Coverage for all samples without a threshold set, resulted in a crowded plot, with exaggerated coverage @fig-cov1 . These might be due to the concatenation and the plot is capturing some of the human genome alignment.
+
+::: {#fig-cov1 layout-ncol="1"}
+![](images/covregion.png)
+
+Coverage for all samples without a threshold set.
+:::
+
+Applying a cutoff of coverage 70% @fig-cov2, we see more uniform distribution across the samples.
+
+::: {#fig-cov2 layout-ncol="1"}
+![Coverage for all samples with a threshold set at 70](images/covregion4.png)
+:::
+
+The GC content was also visualized @fig-gc. The GC content does appear quite uniform as well with most being between 25-75%.
+
+::: {#fig-gc layout-ncol="1"}
+![GC percent content visualization of all samples.](images/GCpctplot.png)
+:::
